@@ -1,11 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Data Viz Site</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Subtle hover animation */
+        .card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello World!</h1>
-    <P>This site will soon contain interactive data visualizations.</P>
-    <iframe src="crime_hourly_interactive.html" width="100%" height="600" frameborder="0"></iframe>
+
+    <header>
+        <h1>Data Visualization Dashboard</h1>
+        <p>Explore interactive insights and patterns</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <iframe src="crime_hourly_interactive.html"></iframe>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Yearly Crime Trends</h2>
+            <p>Interactive trend snapshots from the yearly crime data charts.</p>
+            <div class="image-grid">
+                <img src="yearly_crime_trends1.png" alt="Yearly crime trends 1">
+                <img src="yearly_crime_trends2.png" alt="Yearly crime trends 2">
+                <img src="yearly_crime_trends2.1.png" alt="Yearly crime trends 2.1">
+                <img src="yearly_crime_trends2.2.png" alt="Yearly crime trends 2.2">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>Data Story</h2>
+            <p>Here goes the data story, where we can explain the insights and patterns observed in the visualizations. We can discuss the trends, anomalies, and potential implications of the crime data over time. This section can also include key takeaways and recommendations based on the analysis.</p>
+        </div>
+    </div>
+
+    <footer>
+        Built by • Mathias Bang
+    </footer>
+
 </body>
 </html>
